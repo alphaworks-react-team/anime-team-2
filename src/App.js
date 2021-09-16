@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { getAnimeOne, getAnimeTwo, getAnimeThree } from './utils/axiosRequest'
 
 const App = () => {
-  useEffect(getAnimeOne(), [])
+  useEffect(() => getAnimeOne(), [])
   // useEffect(getAnimeTwo(), [])
   // useEffect(getAnimeThree(), [])
 

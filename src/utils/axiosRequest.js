@@ -18,34 +18,31 @@ const searchConfig = {
 
 const kitsuBaseURL = 'https://kitsu.io/api/edge'
 
-export const getAnimeOne = (res, req) => {
+export const getAnimeOne = () => {
   return axios
     .get(`${kitsuBaseURL}/anime?filter[text]`)
     .then(response => {
       console.log('Anime Data:', response.data)
-      return res.json(response.data)
     })
     .catch(error => {
       console.log({ error })
     })
 }
 
-export const getAnimeTwo = (res, req) => {
+export const getAnimeTwo = () => {
   return AxiosInstance.get('/anime?filter[text]=cowboy%20bebop')
     .then(response => {
       console.log('Anime Data:', response.data)
-      return res.json(response.data)
     })
     .catch(error => {
       console.log({ error })
     })
+}
 
-
-export const getAnimeThree = (res, req) => {
+export const getAnimeThree = () => {
   return AxiosInstance.get(searchConfig)
     .then(response => {
       console.log('Anime Data:', response.data)
-      return res.json(response.data)
     })
     .catch(error => {
       console.log({ error })
