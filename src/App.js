@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react'
+import { getAnimeOne, getAnimeTwo, getAnimeThree } from './utils/axiosRequest'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+  useEffect(getAnimeOne(), [])
+  // useEffect(getAnimeTwo(), [])
+  // useEffect(getAnimeThree(), [])
+
+  return <div>App</div>
 }
 
-export default App;
+export default App
