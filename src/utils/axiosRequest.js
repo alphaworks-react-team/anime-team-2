@@ -1,5 +1,6 @@
 import axios from 'axios'
-
+import qs from 'qs'
+// import
 const AxiosInstance = axios.create({
   baseURL: 'https://kitsu.io/api/edge',
   timeout: 9000,
@@ -8,46 +9,27 @@ const AxiosInstance = axios.create({
     'Content-Type': 'application/vnd.api+json',
   },
 })
-const searchConfig = {
-  url: '/anime',
-  params: {
-    filter: '[text]',
-    value: 'cowboy bebop',
-  },
-}
 
-const kitsuBaseURL = 'https://kitsu.io/api/edge'
-
-export const getAnimeOne = (res, req) => {
-  return axios
-    .get(`${kitsuBaseURL}/anime?filter[text]`)
+export const getSearch = async ({ input }, endpoint, method = 'GET') => {
+  const config = {
+    method: `${method}`,
+    url: `/${endpoint}`,
+    params: {
+      filter: {
+        text: input,
+      },
+    },
+    paramsSerializer: params => {
+      return qs.stringify({ params })
+    },
+  }
+  const request = await AxiosInstance(config)
     .then(response => {
-      console.log('Anime Data:', response.data)
-      return res.json(response.data)
-    })
-    .catch(error => {
-      console.log({ error })
-    })
-}
-
-export const getAnimeTwo = (res, req) => {
-  return AxiosInstance.get('/anime?filter[text]=cowboy%20bebop')
-    .then(response => {
-      console.log('Anime Data:', response.data)
-      return res.json(response.data)
+      console.log('Anime Data (Three):', response.data)
     })
     .catch(error => {
       console.log({ error })
     })
 
-
-export const getAnimeThree = (res, req) => {
-  return AxiosInstance.get(searchConfig)
-    .then(response => {
-      console.log('Anime Data:', response.data)
-      return res.json(response.data)
-    })
-    .catch(error => {
-      console.log({ error })
-    })
+  return request
 }
