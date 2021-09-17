@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react'
-import { getAnimeOne, getAnimeTwo, getAnimeThree } from './utils/axiosRequest';
-
+import React, { useEffect } from 'react';
+import './App.css';
+import Search from './Components/Search/Search';
+import { getSearch } from './utils/axiosRequest';
 
 const App = () => {
-  useEffect(getAnimeOne(), [])
-  // useEffect(getAnimeTwo(), [])
-  // useEffect(getAnimeThree(), [])
+	// useEffect(() => getSearch(), []);
+	// useEffect(getAnimeTwo(), [])
+	// useEffect(getAnimeThree(), [])
 
-  return <div>App</div>
-}
+	return (
+		<div>
+			<Search />
+		</div>
+	);
+};
 
-export default App
+export default App;
