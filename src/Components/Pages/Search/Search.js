@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import { searchRequest } from '../../utils/index'
-import { Button } from '../Button/Button'
+import { Button } from '../../Button/Button'
 import styled from 'styled-components'
-import axios from 'axios'
+// import axios from 'axios';
 
 const ContainerStyles = styled.div`
   height: 10vh;
@@ -38,10 +38,17 @@ const Search = props => {
     return mapper
   }
 
-  const onSubmit = async e => {
+  const onSubmitOne = async e => {
     e.preventDefault()
     const searchResults = await searchRequest({ input }, 'anime', 'text')
     setAnime({ searchResults })
+    const onSubmitTwo = async e => {
+      e.preventDefault()
+      axios
+        .get(`https://kitsu.io/api/edge/anime?filter[text]=${input}`)
+        .then(res => setAnime(res.data.data))
+        .catch(err => console.log(err))
+    }
 
     return { searchResults }
     // const animeSearch = document.querySelector('#text').value;
@@ -61,7 +68,7 @@ const Search = props => {
           placeholder='search anime'
           name='search'
         />
-        <Button onClick={onSubmit} type='submit' bgColor='green' color='white'>
+        <Button onClick={onSubmitOne} type='submit' bgColor='green' color='white'>
           search
         </Button>
       </FormStyles>
@@ -74,4 +81,4 @@ const Search = props => {
   )
 }
 
-export default Search;
+export default Search
