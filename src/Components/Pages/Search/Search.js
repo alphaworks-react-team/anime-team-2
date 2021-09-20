@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { getSearch } from '../../utils/axiosRequest';
-import { Button } from '../Button/Button';
+import { getSearch } from '../../../utils/axiosRequest';
+import { Button } from '../../Button/Button';
 import styled from 'styled-components';
 import axios from 'axios';
 
@@ -39,7 +39,6 @@ const Search = props => {
 
 	const onSubmit = async e => {
 		e.preventDefault();
-		// const animeSearch = document.querySelector('#text').value;
 		axios
 			.get(`https://kitsu.io/api/edge/anime?filter[text]=${input}`)
 			.then(res => setAnime(res.data.data))
