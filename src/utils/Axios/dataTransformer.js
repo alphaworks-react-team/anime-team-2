@@ -1,12 +1,13 @@
 const dataTransformer = responseData => {
   // const transformedData = []
-  console.log(responseData)
   const mapResponseData = responseData.map((data, index) => {
+    // console.log(data.attributes.posterImage)
+
     const dataModel = {
       id: data.id,
       titles: {
-        english: data.attributes.en,
-        japanese: data.attributes.ja_jp,
+        english: data.attributes.titles.en_jp,
+        japanese: data.attributes.titles.ja_jp,
       },
       categories: {
         self: data.relationships.categories.links.self,
@@ -17,29 +18,17 @@ const dataTransformer = responseData => {
         related: data.relationships.genres.links.related,
       },
       generalInfo: {
-        mediaType: data.attributes.subType,
+        mediaType: data.attributes.showType,
         ageRating: data.attributes.ageRating,
         startDate: data.attributes.startDate,
         endDate: data.attributes.endDate,
       },
-      // images: {
-      //   small: {
-      //     cover: data.attributes.coverImage.small,
-      //     poster: data.attributes.posterImage.small,
-      //   },
-      //   medium: {
-      //     cover: data.attributes.coverImage.medium,
-      //     poster: data.attributes.posterImage.medium,
-      //   },
-      //   large: {
-      //     cover: data.attributes.coverImage.large,
-      //     poster: data.attributes.posterImage.large,
-      //   },
-      //   original: {
-      //     cover: data.attributes.coverImage.original,
-      //     poster: data.attributes.posterImage.original,
-      //   },
-      // },
+      images: {
+        small: data.attributes.posterImage.small,
+        medium: data.attributes.posterImage.medium,
+        large: data.attributes.posterImage.large,
+        original: data.attributes.posterImage.original,
+      },
       episodeInfo: {
         count: data.attributes.episodeCount,
         lengthInMinutes: data.attributes.episodeLength,
@@ -67,10 +56,6 @@ const dataTransformer = responseData => {
   })
 
   return { mapResponseData }
-  // responseData =
-  //   !undefined || null
-  //     ? mapResponseData
-  //     : `Response Data Not Found. *Debug Note*: check utils/Axios or the component caller [that intiated this function] :) `
 }
 
 export default dataTransformer

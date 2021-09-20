@@ -1,18 +1,20 @@
 import { useState } from 'react'
-import { searchRequest } from '../../utils/index'
+import { searchRequest } from '../../../utils/index'
 import { Button } from '../../Button/Button'
 import styled from 'styled-components'
-// import axios from 'axios';
+import axios from 'axios'
 
 const ContainerStyles = styled.div`
   height: 10vh;
   width: 100%;
   margin-top: 10px;
 `
+
 const FormStyles = styled.div`
   display: flex;
   justify-content: center;
 `
+
 const InputStyles = styled.input`
   padding: 10px;
   background-color: #f4f4f4;
@@ -49,14 +51,14 @@ const Search = props => {
         .then(res => setAnime(res.data.data))
         .catch(err => console.log(err))
     }
-
     return { searchResults }
-    // const animeSearch = document.querySelector('#text').value;
-    // axios
-    // 	.get(`https://kitsu.io/api/edge/anime?filter[text]=${input}`)
-    // 	.then(res => setAnime(res.data.data))
-    // 	.catch(err => console.log(err));
   }
+
+  // const animeSearch = document.querySelector('#text').value;
+  // axios
+  // 	.get(`https://kitsu.io/api/edge/anime?filter[text]=${input}`)
+  // 	.then(res => setAnime(res.data.data))
+  // 	.catch(err => console.log(err));
 
   return (
     <ContainerStyles>
