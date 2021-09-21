@@ -28,17 +28,17 @@ const Search = props => {
 	const [anime, setAnime] = useState([]);
 	const [input, setInput] = useState('');
 
-	// const mapResults = ({ results }) => {
-	// 	const mapper = results?.map(result => (
-	// 		<div key={result?.id}>
-	// 			<img src={result?.posterImage.large} alt='anime' />
-	// 			<h1>{result?.titles.english}</h1>
-	// 			<h2>{result?.titles.japanese}</h2>
-	// 			<p>{result?.generalInfo.startDate}</p>
-	// 		</div>
-	// 	));
-	// 	return mapper;
-	// };
+	const mapResults = ({ results }) => {
+		const mapper = results?.map(result => (
+			<div key={result?.id}>
+				<img src={result?.images.large} alt='anime' />
+				<h1>{result?.titles.english}</h1>
+				<h2>{result?.titles.japanese}</h2>
+				<p>{result?.generalInfo.startDate}</p>
+			</div>
+		));
+		return mapper;
+	};
 
 	const onSubmitOne = async e => {
 		e.preventDefault();

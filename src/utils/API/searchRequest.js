@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { dataTransformer } from '../index'
+import { animeModel } from '../index'
 
 const searchRequest = async ({ input }, endpoint = 'anime', filterType = 'text') => {
   const baseURL = 'https://kitsu.io/api/edge'
@@ -11,7 +11,7 @@ const searchRequest = async ({ input }, endpoint = 'anime', filterType = 'text')
       const { data } = response.data
       console.log(data)
 
-      const AnimeData = dataTransformer(data)
+      const AnimeData = animeModel(data)
       console.log(AnimeData)
     })
     .catch(error => {

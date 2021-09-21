@@ -1,12 +1,12 @@
-const dataTransformer = responseData => {
-  // const transformedData = []
+const animeModel = responseData => {
   const mapResponseData = responseData.map((data, index) => {
-    // console.log(data.attributes.posterImage)
-
     const dataModel = {
       id: data.id,
       titles: {
-        english: data.attributes.titles.en_jp,
+        english:
+          data.attributes.titles.en ||
+          data.attributes.titles.en_us ||
+          data.attributes.titles.en_jp,
         japanese: data.attributes.titles.ja_jp,
       },
       categories: {
@@ -58,4 +58,4 @@ const dataTransformer = responseData => {
   return { mapResponseData }
 }
 
-export default dataTransformer
+export default animeModel
