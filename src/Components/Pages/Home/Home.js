@@ -1,13 +1,20 @@
-import React from 'react';
-import { Section, Box, BoxTitle, BoxText } from './HomeStyle.js';
+import React, { useState } from 'react';
+import { Section, Box, BoxTitle, BoxImage } from './HomeStyle.js';
 
 export default function Home({ boxData }) {
+	const [show, setShow] = useState(false);
+
 	return (
 		<Section>
-			{boxData.map(box => (
-				<Box key={box.id} bgColor={box.bgColor}>
+			{boxData.map((box, index) => (
+				<Box key={index} shown={show} bgColor={box.bgColor}>
 					<BoxTitle>{box.title}</BoxTitle>
-					<BoxText>{box.text}</BoxText>
+					<BoxImage
+						onMouseEnter={() => setShow(true)}
+						onMouseLeave={() => setShow(false)}
+						img={`https://picsum.photos/200/300`}
+						alt='No Image'
+					/>
 				</Box>
 			))}
 		</Section>

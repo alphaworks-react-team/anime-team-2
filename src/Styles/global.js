@@ -6,6 +6,8 @@ export const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #EDF1F5;
+    color: #ABB4BD;
   }
   :root{
     font-size: ${px2vw(24)};
