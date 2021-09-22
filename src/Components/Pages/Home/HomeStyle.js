@@ -43,11 +43,18 @@ export const Box = styled.div`
 	}
 `;
 export const BoxImage = styled.image`
+<<<<<<< HEAD
 	background-image: ${props => props.img};
 	width: 100%;
 	height: auto;
 	object-fit: fill;
 `;
+=======
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+`
+>>>>>>> main
 
 export const BoxTitle = styled.h3`
 	color: #333333;

@@ -18,6 +18,7 @@ const animeModel = responseData => {
         related: data.relationships.genres.links.related,
       },
       generalInfo: {
+        synopsis: data.attributes.synopsis || data.attributes.description,
         mediaType: data.attributes.showType,
         ageRating: data.attributes.ageRating,
         startDate: data.attributes.startDate,
@@ -52,10 +53,10 @@ const animeModel = responseData => {
         related: data.relationships.installments.links.related,
       },
     }
-    return { dataModel }
+    return dataModel
   })
 
-  return { mapResponseData }
+  return mapResponseData
 }
 
 export default animeModel
