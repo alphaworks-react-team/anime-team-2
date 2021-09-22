@@ -43,11 +43,10 @@ export const Box = styled.div`
 	}
 `;
 export const BoxImage = styled.image`
-background-image: ${`https://picsum.photos/200/300`}
-	width: 100%;
-	height: auto;
-	object-fit: fill;
-`;
+  width: 100%;
+  height: auto;
+  object-fit: fill;
+`
 
 export const BoxTitle = styled.h3`
 	color: #333333;

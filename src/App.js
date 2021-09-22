@@ -4,8 +4,7 @@ import Global from './Styles/global'
 import Home from './Components/Pages/Home/Home'
 import Search from './Components/Pages/Search/Search'
 import TopAnime from './Components/Pages/Home/TopAnime'
-
-
+import Trending from './Components/Pages/Home/Trending'
 
 const lorem =
   'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sed iure blanditiis voluptatum nulla quidem minus quam tempora obcaecati necessitatibus inventore! Vitae totam quam pariatur facilis fugit maxime adipisci eaque.'
@@ -43,85 +42,85 @@ const data = [
   },
 ]
 const topData = [
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-	{
-		rank: 'rank',
-		genre: 'genre',
-		popularity: 'popularity',
-		percentage: 'percent',
-	},
-];
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+  {
+    rank: 'rank',
+    genre: 'genre',
+    popularity: 'popularity',
+    percentage: 'percent',
+  },
+]
 
 const App = () => {
   // useEffect(() => getSearch(), []);
   // useEffect(getAnimeTwo(), [])
   // useEffect(getAnimeThree(), [])
-const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
 
   return (
-		<>
-			<Global />
-			<Search />
-			
-			<Home boxData={data} />
-			<Home boxData={data} />
-			<Home boxData={data} />
-			<TopAnime topTen={topData} />
-		</>
-	);
+    <>
+      <Global />
+      <Search />
+
+      <Trending />
+      <Home />
+      <Home />
+      <TopAnime />
+    </>
+  )
 }
 
 export default App

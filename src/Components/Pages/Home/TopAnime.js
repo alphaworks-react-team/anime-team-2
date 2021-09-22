@@ -3,27 +3,26 @@ import { TopSection, TopMain, TopLeft, TopContainer, ColBox, SubBox } from './Ho
 
 export default function TopAnime({ topTen }) {
 	return (
-		<TopContainer>
-			{topTen.map((info, index) => (
-				<TopSection>
-					<TopLeft>
-					</TopLeft>
-					<TopMain>
-						<ColBox>
-							<SubBox>SubBox</SubBox>
-							<SubBox>SubBox</SubBox>
-						</ColBox>
-						<ColBox>
-							<SubBox>SubBox</SubBox>
-							<SubBox>SubBox</SubBox>
-						</ColBox>
-						<ColBox>
-							<SubBox>SubBox</SubBox>
-							<SubBox>SubBox</SubBox>
-						</ColBox>
-					</TopMain>
-				</TopSection>
-			))}
-		</TopContainer>
-	);
+    <TopContainer>
+      {topTen?.map((info, index) => (
+        <TopSection>
+          <TopLeft></TopLeft>
+          <TopMain>
+            <ColBox>
+              <SubBox>SubBox</SubBox>
+              <SubBox>SubBox</SubBox>
+            </ColBox>
+            <ColBox>
+              <SubBox>SubBox</SubBox>
+              <SubBox>SubBox</SubBox>
+            </ColBox>
+            <ColBox>
+              <SubBox>SubBox</SubBox>
+              <SubBox>SubBox</SubBox>
+            </ColBox>
+          </TopMain>
+        </TopSection>
+      ))}
+    </TopContainer>
+  )
 }
