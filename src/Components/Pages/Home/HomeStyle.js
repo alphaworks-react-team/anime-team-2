@@ -49,14 +49,14 @@ export const BoxImage = styled.image`
 `
 
 export const BoxTitle = styled.h3`
-	color: #333333;
-	font-size: 2rem;
-	text-align: center;
+  color: #333333;
+  font-size: 2rem;
+  text-align: center;
 
-	@media (min-width: 1024px) {
-		font-size: 1.5rem;
-	}
-`;
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+`
 export const BoxText = styled.p`
 	margin-top: ${px2vw(20)};
 	color: #666;
