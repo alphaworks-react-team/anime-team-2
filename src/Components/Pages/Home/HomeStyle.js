@@ -43,7 +43,7 @@ export const Box = styled.div`
 	}
 `;
 export const BoxImage = styled.image`
-background-image: ${`https://picsum.photos/200/300`}
+	background-image: ${props => props.img};
 	width: 100%;
 	height: auto;
 	object-fit: fill;
