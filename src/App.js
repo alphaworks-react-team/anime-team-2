@@ -1,21 +1,10 @@
 import React from 'react';
-import Global from './Styles/global';
-<<<<<<< HEAD
-import { NavBar } from './Components/index';
-const App = () => {
-	return (
-		<>
-			<Global />
-			<NavBar />
-		</>
-	);
-};
-=======
-import Home from './Components/Pages/Home/Home';
+import Global from './Styles/global'
+import Home from './Components/Pages/Home/Home'
 
-import TopAnime from './Components/Pages/Home/TopAnime';
-import TrendingAnime from './Components/Pages/Home/TrendingAnime';
-import TrendingManga from './Components/Pages/Home/TrendingManga';
+import TopAnime from './Components/Pages/Home/TopAnime'
+import TrendingAnime from './Components/Pages/Home/TrendingAnime'
+import TrendingManga from './Components/Pages/Home/TrendingManga'
 import UpcomingAnime from './Components/Pages/Home/UpcomingAnime'
 import Grid from './Components/Pages/Grid/Grid'
 import Navbar from './Components/Nav/Navbar'
@@ -39,6 +28,5 @@ const App = () => {
     </>
   )
 }
->>>>>>> 4dfb4040dffde7bea0bc25e4fbfc3a0d203a0aed
 
 export default App;
