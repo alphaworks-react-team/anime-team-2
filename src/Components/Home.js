@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 import React from 'react'
-import { Section, Box, BoxTitle, BoxImage } from './HomeStyle.js'
+import { Section, Box, BoxTitle, BoxImage } from '../Styles/Home.js'
 
 export default function Home({ boxData }) {
   // const [show, setShow] = useState(false);

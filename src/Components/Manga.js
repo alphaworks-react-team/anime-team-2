@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { RequestOptions } from '../../../utils/index'
-import { Section, Box, BoxTitle, BoxImage } from './HomeStyle.js'
+import { RequestOptions } from '../utils/index'
+import { Section, Box, BoxTitle, BoxImage } from '../Styles/Home'
 
 const Manga = () => {
   const [manga, setManga] = useState([])

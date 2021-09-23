@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { RequestOptions } from '../../../utils/index'
-import { Button } from '../../Button/Button'
+import { useState } from 'react'
+import { RequestOptions } from '../../utils/index'
+import { Button } from '../../Components/Button/Button'
 import styled from 'styled-components'
 import axios from 'axios'
 
@@ -79,8 +79,8 @@ const Search = props => {
   )
 }
 
-export default Search;
+export default Search
 
 {
-	/* {mapResults({ anime })} */
+  /* {mapResults({ anime })} */
 }

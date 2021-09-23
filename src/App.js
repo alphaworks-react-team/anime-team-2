@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import Global from './Styles/global'
-import Home from './Components/Pages/Home/Home'
-import Search from './Components/Pages/Search/Search'
-import TopAnime from './Components/Pages/Home/TopAnime'
-import TrendingAnime from './Components/Pages/Home/TrendingAnime'
-import TrendingManga from './Components/Pages/Home/TrendingManga'
+import Global from './Styles/Global'
+import { NavBar } from './Components/index'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  height: 70dvh;
+  width: 100dvw;
+  overflow: scroll;
+`
 
 const App = () => {
   // useEffect(() => getSearch(), []);
@@ -15,12 +18,7 @@ const App = () => {
   return (
     <>
       <Global />
-      <Search />
-
-      <TrendingAnime />
-      <TrendingManga />
-
-      <TopAnime />
+      <NavBar />
     </>
   )
 }

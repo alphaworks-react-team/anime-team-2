@@ -1,8 +1,15 @@
-import React from 'react';
-import { TopSection, TopMain, TopLeft, TopContainer, ColBox, SubBox } from './HomeStyle.js';
+import React from 'react'
+import {
+  TopSection,
+  TopMain,
+  TopLeft,
+  TopContainer,
+  ColBox,
+  SubBox,
+} from '../Styles/Home.js'
 
 export default function TopAnime({ topTen }) {
-	return (
+  return (
     <TopContainer>
       {topTen?.map((info, index) => (
         <TopSection>
