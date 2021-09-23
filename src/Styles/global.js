@@ -8,14 +8,14 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
     background-color: #EDF1F5;
     color: #ABB4BD;
-  }
+    position: relative;
   :root{
     font-size: ${px2vw(24)};
     font-weight:600;
 
     @media (min-width: 425px) {
       font-size: .8rem;
- 
+
     }
     @media (min-width: 768px) {
       font-size: 1rem;
@@ -27,6 +27,6 @@ export const Global = createGlobalStyle`
 
     }
   }
-`
+}`
 
 export default Global
