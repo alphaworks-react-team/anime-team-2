@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import px2vw from '../../../utils/px2vw';
 
-export const GridItem = styled.div`
+const GridItem = styled.div`
 	height: ${px2vw(550)};
 	flex-basis: 20%;
 	-ms-flex: auto;
@@ -24,3 +24,4 @@ export const GridItem = styled.div`
     flex-basis: 100%;
   } */
 `;
+export default GridItem;
