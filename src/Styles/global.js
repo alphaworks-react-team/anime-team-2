@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import px2vw from '../utils/px2vw';
+import { createGlobalStyle } from 'styled-components'
+import px2vw from '../utils/px2vw'
 
 export const Global = createGlobalStyle`
   * {
@@ -15,7 +15,7 @@ export const Global = createGlobalStyle`
 
     @media (min-width: 425px) {
       font-size: .8rem;
- 
+
     }
     @media (min-width: 768px) {
       font-size: 1rem;
@@ -27,6 +27,6 @@ export const Global = createGlobalStyle`
 
     }
   }
-`;
+}`
 
-export default Global;
+export default Global
