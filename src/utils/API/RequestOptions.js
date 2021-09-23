@@ -1,9 +1,7 @@
 import axios from 'axios'
 import { animeModel } from '../index'
 
-// const baseURL = 'https://kitsu.io/api/edge'
-
-const AxiosRequest = (queryString, cb) => {
+const AxiosRequest = (queryString, callback) => {
   axios
     .get(queryString)
     .then(response => {
@@ -12,7 +10,7 @@ const AxiosRequest = (queryString, cb) => {
 
       const AnimeData = animeModel(data)
 
-      cb(AnimeData)
+      callback(AnimeData)
     })
     .catch(error => {
       console.log({ error })
@@ -21,15 +19,17 @@ const AxiosRequest = (queryString, cb) => {
 
 const RequestOptions = {
   BaseURL: 'https://kitsu.io/api/edge',
-  Search: async ({ input }, endpoint, filterType, pageLimit, cb) => {
-    const queryString = `${RequestOptions.BaseURL}/${endpoint}?filter[${filterType}]=${input}`
-    AxiosRequest(queryString, data => {
-      cb(data)
-    })
+  General: async (endpoint, limit = 10, callback) => {
+    const queryString = `${RequestOptions.BaseURL}/${endpoint}&[limit]=${limit}`
+    AxiosRequest(queryString, data => callback(data))
   },
-  Trending: async (pageLimit, cb) => {
-    const queryString = `${RequestOptions.BaseURL}/trending/anime?pageLimit=${pageLimit}`
-    AxiosRequest(queryString, data => cb(data))
+  Search: async ({ input }, endpoint, limit = 10, callback) => {
+    const queryString = `${RequestOptions.BaseURL}/${endpoint}?filter[text]=${input}&[limit]=${limit}`
+    AxiosRequest(queryString, data => callback(data))
+  },
+  Trending: async (endpoint, limit, callback) => {
+    const queryString = `${RequestOptions.BaseURL}/trending/${endpoint}?[limit]=${limit}`
+    AxiosRequest(queryString, data => callback(data))
   },
 }
 export default RequestOptions

@@ -43,7 +43,7 @@ const Search = props => {
 
   const onSubmitOne = async e => {
     e.preventDefault()
-    const searchResults = await Search({ input }, 'anime', 'text', 20)
+    const searchResults = await Search({ input }, 'anime', 20)
     setAnime({ searchResults })
     const onSubmitTwo = async e => {
       e.preventDefault()

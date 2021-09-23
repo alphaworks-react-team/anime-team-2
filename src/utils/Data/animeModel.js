@@ -25,6 +25,7 @@ const animeModel = responseData => {
         endDate: data.attributes.endDate,
       },
       images: {
+        tiny: data.attributes.posterImage.tiny,
         small: data.attributes.posterImage.small,
         medium: data.attributes.posterImage.medium,
         large: data.attributes.posterImage.large,
