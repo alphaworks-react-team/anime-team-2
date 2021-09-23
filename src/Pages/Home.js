@@ -11,9 +11,9 @@ import PageContainer from '../Components/fragments/PageContainer'
 const Home = () => {
   return (
     <PageContainer>
-      <TrendingAnime />
+      {/* <TrendingAnime />
       <TrendingManga />
-      <TopAnime />
+      <TopAnime /> */}
     </PageContainer>
   )
 }
