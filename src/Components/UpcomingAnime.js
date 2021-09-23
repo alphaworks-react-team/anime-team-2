@@ -1,22 +1,36 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import {Card, Image, Section, Text, Title} from './fragments/Card/index'
-import {RequestOptions} from '../utils/index'
+import { RequestOptions } from '../../../utils/index'
+import { Box, BoxImage, BoxText, BoxTitle, Section } from './HomeStyle'
 
 const UpcomingAnime = () => {
   const [upcomingAnime, setUpcomingAnime] = useState([])
-  const {General: UpcomingRequest} = RequestOptions
+  const { Filter: UpcomingRequest } = RequestOptions
+
+  useEffect(() => {
+    ;(async () => {
+      UpcomingRequest('anime', 'status', 'upcoming', 5, data => {
+        setUpcomingAnime(data)
+      })
+    })()
+  }, [])
 
   const renderUpcoming = () => {
-    return upcomingAnime?.map((anime, index) => {
-      <>
-        <Title>{anime.titles.enlgish}</Title>
-        <
-      </>
+    return upcomingAnime?.map((box, index) => {
+      return (
+        <Section key={index}>
+          <div>
+            <BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
+            <Box>
+              <BoxImage src={box.images.medium} />
+            </Box>
+          </div>
+        </Section>
+      )
     })
   }
 
-  return <Section></Section>
+  return <Section>{renderUpcoming()}</Section>
 }
 
 export default UpcomingAnime
