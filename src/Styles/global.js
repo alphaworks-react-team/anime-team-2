@@ -14,7 +14,7 @@ export const Global = createGlobalStyle`
     font-weight:600;
 
     @media (min-width: 425px) {
-      font-size: .8rem;
+      font-size: 1rem;
  
     }
     @media (min-width: 768px) {
