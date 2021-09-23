@@ -46,11 +46,11 @@ export const Box = styled.div`
 		height: 100%;
 	}
 `;
-export const BoxImage = styled.image`
-	width: 100%;
-	height: 100%;
-	object-fit: fill;
-`;
+export const BoxImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+`
 
 export const BoxTitle = styled.div`
 	color: #333333;

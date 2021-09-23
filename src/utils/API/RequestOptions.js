@@ -19,16 +19,26 @@ const AxiosRequest = (queryString, callback) => {
 
 const RequestOptions = {
   BaseURL: 'https://kitsu.io/api/edge',
-  General: async (endpoint, limit = 10, callback) => {
-    const queryString = `${RequestOptions.BaseURL}/${endpoint}&[limit]=${limit}`
+  Filter: async (endpoint, filterBy, filterValue, limit, callback) => {
+    const queryString = `${
+      RequestOptions.BaseURL
+    }/${endpoint}?filter[${filterBy}]=${filterValue}&page[limit]=${limit || 10}`
     AxiosRequest(queryString, data => callback(data))
   },
-  Search: async ({ input }, endpoint, limit = 10, callback) => {
-    const queryString = `${RequestOptions.BaseURL}/${endpoint}?filter[text]=${input}&[limit]=${limit}`
+  General: async (endpoint, limit, callback) => {
+    const queryString = `${RequestOptions.BaseURL}/${endpoint}&[limit]=${limit || 10}`
+    AxiosRequest(queryString, data => callback(data))
+  },
+  Search: async ({ input }, endpoint, limit, callback) => {
+    const queryString = `${
+      RequestOptions.BaseURL
+    }/${endpoint}?filter[text]=${input}&[limit]=${limit || 10}`
     AxiosRequest(queryString, data => callback(data))
   },
   Trending: async (endpoint, limit, callback) => {
-    const queryString = `${RequestOptions.BaseURL}/trending/${endpoint}?[limit]=${limit}`
+    const queryString = `${RequestOptions.BaseURL}/trending/${endpoint}?[limit]=${
+      limit || 10
+    }`
     AxiosRequest(queryString, data => callback(data))
   },
 }

@@ -8,15 +8,15 @@ const TrendingAnime = () => {
 
 	const renderTrending = () => {
 		return trendingAnime?.map((box, index) => (
-			<Section>
-				<div key={index}>
-					<BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
-					<Box key={box.id} bgColor={box.bgColor}>
-						<img src={box.images.small} alt='Trending Anime' />
-					</Box>
-				</div>
-			</Section>
-		));
+      <Section key={index}>
+        <div>
+          <BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
+          <Box key={box.id} bgColor={box.bgColor}>
+            <img src={box.images.small} alt='Trending Anime' />
+          </Box>
+        </div>
+      </Section>
+    ))
 	};
 
 	useEffect(() => {
