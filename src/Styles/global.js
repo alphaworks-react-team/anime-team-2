@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import px2vw from '../utils/px2vw'
+import { createGlobalStyle } from 'styled-components';
+import px2vw from '../utils/px2vw';
 
 export const Global = createGlobalStyle`
   * {
@@ -8,7 +8,7 @@ export const Global = createGlobalStyle`
     box-sizing: border-box;
     background-color: #EDF1F5;
     color: #ABB4BD;
-  }
+    position: relative;
   :root{
     font-size: ${px2vw(24)};
     font-weight:600;
@@ -27,6 +27,6 @@ export const Global = createGlobalStyle`
 
     }
   }
-`
+`;
 
-export default Global
+export default Global;
