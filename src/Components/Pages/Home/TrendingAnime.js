@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RequestOptions } from '../../../utils/index';
-import { Section, Box, BoxTitle, BoxImage } from './HomeStyle.js';
+import { Section, Box, BoxTitle } from './HomeStyle.js';
 
 const TrendingAnime = () => {
 	const [trendingAnime, setTrendingAnime] = useState([]);

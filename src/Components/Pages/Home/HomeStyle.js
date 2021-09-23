@@ -24,8 +24,8 @@ export const Box = styled.div`
 	flex-direction: column;
 	border: 0;
 	background-color: ${props => props.bgColor};
-	height: 100%;
-	border-radius: 3px;
+	/* height: 100%; */
+	border-radius: 5px;
 	box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
 	-webkit-box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
 	-moz-box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
@@ -39,11 +39,6 @@ export const Box = styled.div`
 		width: ${px2vw(160, 768)};
 		min-height: ${px2vw(200, 768)};
 		height: 100%;
-	}
-
-	@media (min-width: 1024px) {
-		width: ${px2vw(220)};
-		height: ${px2vw(200, 768)};
 	}
 `;
 export const BoxImage = styled.image`
