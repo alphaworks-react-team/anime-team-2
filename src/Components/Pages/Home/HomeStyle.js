@@ -4,10 +4,10 @@ import px2vw from '../../../utils/px2vw';
 export const Section = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	margin: ${px2vw(32)};
+	margin: ${px2vw(16)};
 	max-width: 100%;
 	max-height: 100%;
+	padding: ${px2vw(16)};
 
 	@media (min-width: 1024px) {
 		flex-wrap: nowrap;
@@ -19,11 +19,10 @@ export const Section = styled.div`
 
 export const Box = styled.div`
 	display: flex;
-	width: ${px2vw(320, 320)};
+	min-width: ${px2vw(160)};
 	min-height: ${px2vw(200, 320)};
 	flex-direction: column;
-	padding: ${px2vw(20)};
-	margin: ${px2vw(20)};
+	border: 0;
 	background-color: ${props => props.bgColor};
 	height: 100%;
 	border-radius: 3px;
@@ -31,32 +30,49 @@ export const Box = styled.div`
 	-webkit-box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
 	-moz-box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
 
-	@media (min-width: 768px) {
+	@media (min-width: 425px) {
 		width: ${px2vw(320, 768)};
+		min-height: ${px2vw(320, 768)};
+		height: 100%;
+	}
+	@media (min-width: 768px) {
+		width: ${px2vw(160, 768)};
 		min-height: ${px2vw(200, 768)};
 		height: 100%;
 	}
 
 	@media (min-width: 1024px) {
-		width: ${px2vw(500)};
-		min-height: ${px2vw(300)};
+		width: ${px2vw(220)};
+		height: ${px2vw(200, 768)};
 	}
 `;
 export const BoxImage = styled.image`
-  width: 100%;
-  height: auto;
-  object-fit: fill;
-`
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+`;
 
-export const BoxTitle = styled.h3`
-  color: #333333;
-  font-size: 2rem;
-  text-align: center;
+export const BoxTitle = styled.div`
+	color: #333333;
+	background-color: #edf1f5;
+	white-space: white-space;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	@media (min-width: 425px) {
+		width: ${px2vw(320, 768)};
+		height: ${px2vw(50)};
+	}
+	@media (min-width: 768px) {
+		width: ${px2vw(220)};
+		height: ${px2vw(30)};
+	}
 
-  @media (min-width: 1024px) {
-    font-size: 1.5rem;
-  }
-`
+	@media (min-width: 1024px) {
+		width: ${px2vw(220)};
+		height: ${px2vw(30)};
+	}
+`;
+
 export const BoxText = styled.p`
 	margin-top: ${px2vw(20)};
 	color: #666;

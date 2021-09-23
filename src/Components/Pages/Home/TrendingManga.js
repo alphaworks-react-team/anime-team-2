@@ -1,34 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import { RequestOptions } from '../../../utils/index'
-import { Section, Box, BoxTitle, BoxImage } from './HomeStyle.js'
+import React, { useEffect, useState } from 'react';
+import { RequestOptions } from '../../../utils/index';
+import { Section, Box, BoxTitle, BoxImage } from './HomeStyle.js';
 
 const TrendingManga = () => {
-  const [trendingManga, setTrendingManga] = useState([])
-  const { Trending } = RequestOptions
+	const [trendingManga, setTrendingManga] = useState([]);
+	const { Trending } = RequestOptions;
 
-  const renderTrendingManga = () => {
-    return trendingManga?.map((box, index) => (
-      <div key={index}>
-        <BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
-        <Box key={box.id} bgColor={box.bgColor}>
-          <img src={box.images.medium} alt='Trending Manga' />
-        </Box>
-      </div>
-    ))
-  }
+	const renderTrendingManga = () => {
+		return trendingManga?.map((box, index) => (
+			<Section>
+				<div key={index}>
+					<BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
+					<Box key={box.id} bgColor={box.bgColor}>
+						<img src={box.images.small} alt='Trending Anime' />
+					</Box>
+				</div>
+			</Section>
+		));
+	};
 
-  useEffect(() => {
-    ;(async () => {
-      Trending('manga', 5, data => {
-        setTrendingManga(data)
-      })
-    })()
-  }, [])
+	useEffect(() => {
+		(async () => {
+			Trending('manga', 5, data => {
+				setTrendingManga(data);
+			});
+		})();
+	}, []);
 
-  return <Section>{renderTrendingManga()}</Section>
-}
+	return (
+		<div>
+			<h1 style={{ paddingLeft: '16px' }}>Trending Manga</h1>
+			<Section>{renderTrendingManga()}</Section>
+		</div>
+	);
+};
 
-export default TrendingManga
+export default TrendingManga;
 
 //  <Section>
 //     {' '}
