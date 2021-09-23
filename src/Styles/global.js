@@ -11,12 +11,19 @@ export const Global = createGlobalStyle`
   }
   :root{
     font-size: ${px2vw(24)};
+    font-weight:600;
 
+    @media (min-width: 425px) {
+      font-size: .8rem;
+ 
+    }
     @media (min-width: 768px) {
-      font-size: ${px2vw(18)};
+      font-size: 1rem;
+      font-weight:600;
     }
     @media (min-width: 1024px) {
-      font-size: ${px2vw(16)};
+      font-size: 1.2rem;
+      font-weight:600;
 
     }
   }
