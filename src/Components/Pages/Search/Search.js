@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { RequestOptions } from '../../../utils/index';
 import styled from 'styled-components';
 import axios from 'axios';
-
+import Modal from './Modal';
 const Content = styled.div`
 	display: flex;
 	justify-content: center;
