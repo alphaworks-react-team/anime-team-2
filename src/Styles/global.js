@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import px2vw from '../utils/px2vw';
-
 export const Global = createGlobalStyle`
   * {
     margin: 0;
@@ -10,7 +9,8 @@ export const Global = createGlobalStyle`
     color: #ABB4BD;
   }
   :root{
-    font-size: ${px2vw(24)};
+
+    font-size: 24px;
     font-weight:600;
 
     @media (min-width: 425px) {
@@ -26,6 +26,14 @@ export const Global = createGlobalStyle`
       font-weight:600;
 
     }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
   }
 `;
 

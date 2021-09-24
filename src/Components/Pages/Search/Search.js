@@ -1,30 +1,65 @@
 import { useState } from 'react';
 import { RequestOptions } from '../../../utils/index';
-import { Button } from '../../Button/Button';
 import styled from 'styled-components';
 import axios from 'axios';
-<<<<<<< HEAD
-
-const ContainerStyles = styled.div`
-	height: 10vh;
-	width: 100%;
-	margin-top: 10px;
-`;
-
-const FormStyles = styled.div`
+const Content = styled.div`
 	display: flex;
 	justify-content: center;
+	height: 50%;
+	background-color: #26466d;
+	border-radius: 5px;
+	@media (min-width: 425px) {
+		width: 50%;
+	@media (min-width: 768px) {
+		width: 50%;
+	}
+	@media (min-width: 1024px) {
+		width: 90%;
+	}
 `;
-=======
->>>>>>> dev
 
+const Button = styled.button`
+	background-color: #36648b;
+	color: #edf1f5;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	height: 100%;
+	border: none;
+	outline: none;
+	transition: transform 0.1s ease-in;
+	cursor: pointer;
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.09);
+		transform: scale(1.02);
+	}
+	@media (min-width: 425px) {
+		width: 30%;
+	}
+	@media (min-width: 768px) {
+		width: 10%;
+	}
+	@media (min-width: 1024px) {
+		width: 10%;
+	}
+`;
 const InputStyles = styled.input`
-	padding: 10px;
+	width: 90%;
+	height: 100%;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 	background-color: #f4f4f4;
 	border: none;
 	outline: none;
-	width: 70%;
 	align-self: center;
+	@media (min-width: 425px) {
+		width: 70%;
+	}
+	@media (min-width: 768px) {
+		width: 90%;
+	}
+	@media (min-width: 1024px) {
+		width: 30%;
+	}
 `;
 
 const Search = props => {
@@ -58,28 +93,6 @@ const Search = props => {
 		return { searchResults };
 	};
 
-<<<<<<< HEAD
-	return (
-		<ContainerStyles>
-			<FormStyles>
-				<InputStyles
-					id='text'
-					type='text'
-					onChange={e => setInput(e.target.value)}
-					placeholder='search anime'
-					name='search'
-				/>
-				<Button
-					onClick={onSubmitOne}
-					type='submit'
-					bgColor='green'
-					color='white'
-				>
-					search
-				</Button>
-			</FormStyles>
-		</ContainerStyles>
-=======
 	// const animeSearch = document.querySelector('#text').value;
 	// axios
 	// 	.get(`https://kitsu.io/api/edge/anime?filter[text]=${input}`)
@@ -87,7 +100,7 @@ const Search = props => {
 	// 	.catch(err => console.log(err));
 
 	return (
-		<>
+		<Content>
 			<InputStyles
 				id='text'
 				type='text'
@@ -95,11 +108,10 @@ const Search = props => {
 				placeholder='search anime'
 				name='search'
 			/>
-			<Button onClick={onSubmitOne} type='submit' bgColor='green' color='white'>
+			<Button onClick={onSubmitOne} type='submit'>
 				search
 			</Button>
-		</>
->>>>>>> dev
+		</Content>
 	);
 };
 

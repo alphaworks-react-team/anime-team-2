@@ -8,15 +8,15 @@ const TrendingManga = () => {
 
 	const renderTrendingManga = () => {
 		return trendingManga?.map((box, index) => (
-      <Section key={index}>
-        <div>
-        <BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
-        <Box key={box.id} bgColor={box.bgColor}>
-          <img src={box.images.small} alt='Trending Anime' />
-        </Box>
-        </div>
-      </Section>
-    ))
+			<Section key={index}>
+				<div>
+					<BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
+					<Box key={box.id} bgColor={box.bgColor}>
+						<img src={box.images.small} alt='Trending Anime' />
+					</Box>
+				</div>
+			</Section>
+		));
 	};
 
 	useEffect(() => {
@@ -29,7 +29,9 @@ const TrendingManga = () => {
 
 	return (
 		<div>
-			<h1 style={{ paddingLeft: '16px' }}>Trending Manga</h1>
+			<h1 style={{ paddingLeft: '16px', paddingTop: '16px' }}>
+				Trending Manga
+			</h1>
 			<Section>{renderTrendingManga()}</Section>
 		</div>
 	);
