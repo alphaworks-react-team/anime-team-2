@@ -74,7 +74,7 @@ export default function TopAnime() {
 
 	return (
 		<div>
-			<h1 style={{ paddingLeft: '16px', paddingTop: '16px' }}>TopAnime</h1>
+			<h1 style={{ paddingLeft: '16px', paddingTop: '40px' }}>TopAnime</h1>
 			<TopContainer>{renderTopAnime()}</TopContainer>;
 		</div>
 	);
