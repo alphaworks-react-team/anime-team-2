@@ -46,6 +46,9 @@ const DropdownContent = styled.div`
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
+	&:hover {
+		display: block;
+	}
 `;
 const DropdownLinks = styled.a`
 	color: black;
@@ -59,7 +62,7 @@ const Navbar = () => {
 		<NavStyle>
 			<Search />
 			<Dropdown>
-				<DropdownButton>Button</DropdownButton>
+				<DropdownButton>Pages</DropdownButton>
 				<DropdownContent>
 					<DropdownLinks href='#'>Link</DropdownLinks>
 					<DropdownLinks href='#'>Link</DropdownLinks>

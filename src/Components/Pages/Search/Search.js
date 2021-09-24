@@ -3,7 +3,6 @@ import { RequestOptions } from '../../../utils/index';
 import styled from 'styled-components';
 import axios from 'axios';
 
-
 const Content = styled.div`
 	display: flex;
 	justify-content: center;
@@ -12,6 +11,7 @@ const Content = styled.div`
 	border-radius: 5px;
 	@media (min-width: 425px) {
 		width: 50%;
+	}
 	@media (min-width: 768px) {
 		width: 50%;
 	}
@@ -79,7 +79,6 @@ const Search = props => {
 		));
 		return mapper;
 	};
-​
 	const onSubmitOne = async e => {
 		e.preventDefault();
 		const searchResults = await Search({ input }, 'anime', 20);
@@ -93,13 +92,6 @@ const Search = props => {
 		};
 		return { searchResults };
 	};
-
-	// const animeSearch = document.querySelector('#text').value;
-	// axios
-	// 	.get(`https://kitsu.io/api/edge/anime?filter[text]=${input}`)
-	// 	.then(res => setAnime(res.data.data))
-	// 	.catch(err => console.log(err));
-
 	return (
 		<Content>
 			<InputStyles
@@ -117,4 +109,3 @@ const Search = props => {
 };
 
 export default Search;
-

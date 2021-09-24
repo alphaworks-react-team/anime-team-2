@@ -18,7 +18,6 @@ const App = () => {
 			<TrendingManga />
 			<UpcomingAnime />
 			<TopAnime />
-			<Grid />
 		</>
 	);
 };
