@@ -47,10 +47,10 @@ export const Box = styled.div`
 	}
 `;
 export const BoxImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
-`
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+`;
 
 export const BoxTitle = styled.div`
 	color: #333333;
@@ -92,6 +92,7 @@ export const TopContainer = styled.div`
 export const TopSection = styled.div`
 	display: flex;
 	flex-flow: row;
+	align-content: center;
 	margin: ${px2vw(32)};
 	max-width: 100%;
 	min-height: ${px2vw(80)};
@@ -106,14 +107,35 @@ export const TopLeft = styled.div`
 	background-color: #fbfbfb;
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
-`;
+	box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
+	-moz-box-shadow: 1px 15px 25px -5px rgba(0, 0, 0, 0.08);
 
+	@media (min-width: 425px) {
+		flex: 4;
+		height: 120px;
+	}
+	@media (min-width: 768px) {
+		width: 80%;
+		height: 120px;
+	}
+
+	@media (min-width: 1024px) {
+		width: 80%;
+		height: 120px;
+	}
+`;
+export const TopTitle = styled.div`
+	color: black;
+
+	background-color: #fbfbfb;
+`;
 export const TopMain = styled.div`
 	background-color: #fbfbfb;
 	display: flex;
 
 	flex: 4;
-	text-align: left;
+	text-align: center;
 	font-weight: 600;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
@@ -123,6 +145,13 @@ export const ColBox = styled.div`
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
+	width: 100%;
+	height: 100%;
+	margin-left: 6px;
+	background-color: #fbfbfb;
+`;
+export const RowBox = styled.div`
+	display: flex;
 	height: 100%;
 	margin-left: 6px;
 	background-color: #fbfbfb;
@@ -131,4 +160,11 @@ export const SubBox = styled.div`
 	height: 30%;
 	margin: 2px;
 	background-color: #fbfbfb;
+`;
+export const TopImage = styled.img`
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	object-fit: fill;
 `;
