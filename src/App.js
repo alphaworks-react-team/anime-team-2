@@ -1,7 +1,5 @@
 import React from 'react';
 import Global from './Styles/global';
-import Home from './Components/Pages/Home/Home';
-
 import TopAnime from './Components/Pages/Home/TopAnime';
 import TrendingAnime from './Components/Pages/Home/TrendingAnime';
 import TrendingManga from './Components/Pages/Home/TrendingManga';
