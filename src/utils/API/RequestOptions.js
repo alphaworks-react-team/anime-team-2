@@ -1,16 +1,32 @@
 import axios from 'axios'
-import { animeModel } from '../index'
+import { animeModel, categoriesModel } from '../index'
 
 const AxiosRequest = (queryString, callback) => {
   axios
     .get(queryString)
     .then(response => {
       const { data } = response.data
-      console.log(data)
+      console.log('Anime Data:', data)
 
       const AnimeData = animeModel(data)
-
+      console.log('Modeled Anime Data:', data)
       callback(AnimeData)
+    })
+    .catch(error => {
+      console.log({ error })
+    })
+}
+const CategoryAxiosRequest = (queryString, callback) => {
+  axios
+    .get(queryString)
+    .then(response => {
+      const { data } = response.data
+      console.log('Category Data:', data)
+
+      const CategoryData = categoriesModel(data)
+      console.log('Modeled Category Data:', data)
+
+      callback(CategoryData)
     })
     .catch(error => {
       console.log({ error })
@@ -19,6 +35,12 @@ const AxiosRequest = (queryString, callback) => {
 
 const RequestOptions = {
   BaseURL: 'https://kitsu.io/api/edge',
+  Categories: async (limit, callback) => {
+    const queryString = `${RequestOptions.BaseURL}/categories?&page[limit]=${
+      limit || 10
+    }&sort=title`
+    CategoryAxiosRequest(queryString, data => callback(data))
+  },
   Filter: async (endpoint, filterBy, filterValue, limit, callback) => {
     const queryString = `${
       RequestOptions.BaseURL

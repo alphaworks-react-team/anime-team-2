@@ -11,16 +11,16 @@ import Navbar from './Components/Nav/Navbar';
 
 const App = () => {
 	return (
-		<>
-			<Global />
-			<Navbar />
-			<TrendingAnime />
-			<TrendingManga />
-			<UpcomingAnime />
-			<TopAnime />
-			<Grid />
-		</>
-	);
+    <>
+      <Global />
+      <Navbar />
+      <TrendingAnime />
+      <TrendingManga />
+      <UpcomingAnime />
+      <TopAnime />
+      <Grid />
+    </>
+  )
 };
 
 export default App;

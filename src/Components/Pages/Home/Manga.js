@@ -25,7 +25,7 @@ const Manga = () => {
 		})();
 	}, []);
 
-	return <Section>{renderManga()}</Section>;
+	return <Section>Manga</Section>
 };
 
 export default Manga;
