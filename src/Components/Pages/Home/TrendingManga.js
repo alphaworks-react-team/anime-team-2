@@ -29,7 +29,7 @@ const TrendingManga = () => {
 
 	return (
 		<div>
-			<h1 style={{ paddingLeft: '16px', paddingTop: '16px' }}>
+			<h1 style={{ paddingLeft: '16px', paddingTop: '40px' }}>
 				Trending Manga
 			</h1>
 			<Section>{renderTrendingManga()}</Section>
