@@ -23,8 +23,8 @@ const App = () => {
       <TrendingAnime />
       <TrendingManga />
       <UpcomingAnime />
-      <Grid />
       <TopAnime />
+      <Grid />
     </>
   )
 }

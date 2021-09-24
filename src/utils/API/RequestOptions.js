@@ -35,6 +35,15 @@ const RequestOptions = {
     }/${endpoint}?filter[text]=${input}&[limit]=${limit || 10}`
     AxiosRequest(queryString, data => callback(data))
   },
+  Sort: async (endpoint, limit, callback) => {
+    // const sortOrder = () => {
+    //   return ascOrDesc === 'desc' ? '-' : ''
+    // }
+    const queryString = `${
+      RequestOptions.BaseURL
+    }/${endpoint}/?sort=-averageRating&[limit]=${limit || 10}`
+    AxiosRequest(queryString, data => callback(data))
+  },
   Trending: async (endpoint, limit, callback) => {
     const queryString = `${RequestOptions.BaseURL}/trending/${endpoint}?[limit]=${
       limit || 10
