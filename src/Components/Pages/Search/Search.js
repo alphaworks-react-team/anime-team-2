@@ -65,47 +65,46 @@ const InputStyles = styled.input`
 `;
 
 const Search = props => {
-	const [anime, setAnime] = useState([]);
-	const [input, setInput] = useState('');
-	const { Search } = RequestOptions;
-	const mapResults = ({ results }) => {
-		const mapper = results?.map(result => (
-			<div key={result?.id}>
-				<img src={result?.images.large} alt='anime' />
-				<h1>{result?.titles.english}</h1>
-				<h2>{result?.titles.japanese}</h2>
-				<p>{result?.generalInfo.startDate}</p>
-			</div>
-		));
-		return mapper;
-	};
-	const onSubmitOne = async e => {
-		e.preventDefault();
-		const searchResults = await Search({ input }, 'anime', 20);
-		setAnime({ searchResults });
-		const onSubmitTwo = async e => {
-			e.preventDefault();
-			axios
-				.get(`https://kitsu.io/api/edge/anime?filter[text]=${input}`)
-				.then(res => setAnime(res.data.data))
-				.catch(err => console.log(err));
-		};
-		return { searchResults };
-	};
-	return (
-		<Content>
-			<InputStyles
-				id='text'
-				type='text'
-				onChange={e => setInput(e.target.value)}
-				placeholder='search anime'
-				name='search'
-			/>
-			<Button onClick={onSubmitOne} type='submit' bgColor='green' color='white'>
-				search
-			</Button>
-		</Content>
-	);
+  // const [anime, setAnime] = useState([]);
+  const [visibility, setVisibility] = useState(false)
+  const [searchResults, setSearchResults] = useState([])
+  const [input, setInput] = useState('')
+  const { Search } = RequestOptions
+  const renderModal = () => {
+    const mapper = searchResults?.map(result => (
+      <Modal
+        key={result.id}
+        title={result.title}
+        img={result.image.medium}
+        visibility={visibility}
+      />
+    ))
+
+    setVisibility(true)
+    return mapper
+  }
+  const onSubmit = async () => {
+    // e.preventDefault()
+    const getSearchResults = await Search({ input }, 'anime', 20, data => {
+      setSearchResults(data)
+      return renderModal()
+    })
+    return getSearchResults
+  }
+  return (
+    <Content>
+      <InputStyles
+        id='text'
+        type='text'
+        onChange={e => setInput(e.target.value)}
+        placeholder='search anime'
+        name='search'
+      />
+      <Button onClick={onSubmit} type='submit' bgColor='green' color='white'>
+        search
+      </Button>
+    </Content>
+  )
 };
 
 export default Search;
