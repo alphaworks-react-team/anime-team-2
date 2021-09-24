@@ -22,7 +22,7 @@ const UpcomingAnime = () => {
 					<div>
 						<BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
 						<Box key={box.id} bgColor={box.bgColor}>
-							<img src={box.images.small} style={{ objectFit: 'fill' }} />
+							<BoxImage src={box.images.small} />
 						</Box>
 					</div>
 				</Section>
@@ -35,6 +35,7 @@ const UpcomingAnime = () => {
 			<h1 style={{ paddingLeft: '16px', paddingTop: '16px' }}>
 				Upcoming Anime
 			</h1>
+
 			<Section>{renderUpcoming()}</Section>
 		</div>
 	);

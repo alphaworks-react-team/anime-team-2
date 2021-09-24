@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RequestOptions } from '../../../utils/index';
-import { Section, Box, BoxTitle } from './HomeStyle.js';
+import { Section, Box, BoxTitle, BoxImage } from './HomeStyle.js';
 
 const TrendingAnime = () => {
 	const [trendingAnime, setTrendingAnime] = useState([]);
@@ -12,7 +12,7 @@ const TrendingAnime = () => {
 				<div>
 					<BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
 					<Box key={box.id} bgColor={box.bgColor}>
-						<img src={box.images.small} alt='Trending Anime' />
+						<BoxImage src={box.images.small} alt='Trending Anime' />
 					</Box>
 				</div>
 			</Section>
