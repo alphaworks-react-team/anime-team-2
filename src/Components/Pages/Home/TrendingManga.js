@@ -12,7 +12,7 @@ const TrendingManga = () => {
 				<div>
 					<BoxTitle key={box.title}>{box.titles.english}</BoxTitle>
 					<Box key={box.id} bgColor={box.bgColor}>
-						<img src={box.images.small} alt='Trending Anime' />
+						<BoxImage src={box.images.small} alt='Trending Anime' />
 					</Box>
 				</div>
 			</Section>
