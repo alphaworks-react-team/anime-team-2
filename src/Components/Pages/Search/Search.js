@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { RequestOptions } from '../../../utils/index';
 import styled from 'styled-components';
 import axios from 'axios';
+
+
 const Content = styled.div`
 	display: flex;
 	justify-content: center;
@@ -66,7 +68,6 @@ const Search = props => {
 	const [anime, setAnime] = useState([]);
 	const [input, setInput] = useState('');
 	const { Search } = RequestOptions;
-
 	const mapResults = ({ results }) => {
 		const mapper = results?.map(result => (
 			<div key={result?.id}>
@@ -78,7 +79,7 @@ const Search = props => {
 		));
 		return mapper;
 	};
-
+​
 	const onSubmitOne = async e => {
 		e.preventDefault();
 		const searchResults = await Search({ input }, 'anime', 20);
@@ -108,7 +109,7 @@ const Search = props => {
 				placeholder='search anime'
 				name='search'
 			/>
-			<Button onClick={onSubmitOne} type='submit'>
+			<Button onClick={onSubmitOne} type='submit' bgColor='green' color='white'>
 				search
 			</Button>
 		</Content>
@@ -117,6 +118,3 @@ const Search = props => {
 
 export default Search;
 
-{
-	/* {mapResults({ anime })} */
-}

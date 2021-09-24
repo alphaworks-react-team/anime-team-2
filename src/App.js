@@ -8,13 +8,7 @@ import TrendingManga from './Components/Pages/Home/TrendingManga';
 import UpcomingAnime from './Components/Pages/Home/UpcomingAnime';
 import Grid from './Components/Pages/Grid/Grid';
 import Navbar from './Components/Nav/Navbar';
-import styled from 'styled-components';
 
-const Container = styled.div`
-	position: absolute;
-	height: 100vh;
-	width: 100vw;
-`;
 const App = () => {
 	return (
 		<>
@@ -24,6 +18,7 @@ const App = () => {
 			<TrendingManga />
 			<UpcomingAnime />
 			<TopAnime />
+			<Grid />
 		</>
 	);
 };

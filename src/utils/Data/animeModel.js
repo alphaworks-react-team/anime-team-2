@@ -1,5 +1,16 @@
 const animeModel = responseData => {
-  const mapResponseData = responseData.map((data, index) => {
+  const minuteConverter = minutes => {
+    if (minutes <= 60) {
+      return `${minutes} mins`
+    } else {
+      const hours = Math.round(minutes / 60)
+      const remaingMinutes = minutes % 60
+
+      return `${hours} hrs ${remaingMinutes} mins`
+    }
+  }
+
+  const mapResponseData = responseData.map(data => {
     const dataModel = {
       id: data.id,
       titles: {
@@ -21,6 +32,7 @@ const animeModel = responseData => {
         synopsis: data.attributes.synopsis || data.attributes.description,
         mediaType: data.attributes.showType,
         ageRating: data.attributes.ageRating,
+        status: data.attributes.status,
         startDate: data.attributes.startDate,
         endDate: data.attributes.endDate,
       },
@@ -33,7 +45,7 @@ const animeModel = responseData => {
       },
       episodeInfo: {
         count: data.attributes.episodeCount,
-        lengthInMinutes: data.attributes.episodeLength,
+        lengthInMinutes: minuteConverter(data.attributes.episodeLength),
       },
       stream: {
         trailer: data.attributes.youtubeVideoId,
